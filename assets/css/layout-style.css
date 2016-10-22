@@ -18,3 +18,17 @@
 	width: 100%;
 	height: 100vh;
 }
+
+/* Mapbox stuff */
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; z-index: -100; }
+.shader { background-color: rgba(255,255,255,0.5); position:absolute; top:0; bottom:0; width:100%;}
+
+
+/* iframe */
+#my_typeform {
+display: inline-block;
+width: 100%;
+height: 100vh;
+
+}

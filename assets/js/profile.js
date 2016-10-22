@@ -9,4 +9,4 @@
 
 
 	//foreach in other tabs
-});
+// });
