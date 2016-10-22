@@ -30,6 +30,14 @@ app.get('/profile', function(req, res) {
 });
 
 
+app.get('/form-vispdat', function(req, res) {
+    res.render('form-vispdat.html', {
+        page: 'form-vispdat',
+        port: app.get('port')
+    });
+});
+
+
 app.get('/profile/vispdat', function(req, res) {
     res.render('vispdat.html', {
         page: 'vispdat',

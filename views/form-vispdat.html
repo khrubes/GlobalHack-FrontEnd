@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<link href="/css/form-vispdat.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+   <script type="text/javascript" src="/js/form-vispdat.js"></script>
+
+<!-- need server side parsing of radio fields and dates -->
+
+
+{% macro radioButton(field_name, human_name) %}
+	<div class="question-wrapper">
+		<p>{{ human_name }}<p> 
+		<div id="radio-button-wrapper">
+		  	<p>
+		      <input name="{{field_name}}" type="radio" id="{{field_name}}yes"/>
+		      <label for="{{field_name}}yes">Yes</label>
+		    </p>
+		    <p>
+		      <input name="{{field_name}}" type="radio" id="{{field_name}}no"/>
+		      <label for="{{field_name}}no">No</label>
+		    </p>
+		    <p>
+		      <input name="{{field_name}}" type="radio" id="{{field_name}}refused"/>
+		      <label for="{{field_name}}refused">Refused</label>
+		    </p>
+		</div>
+	</div>
+{% endmacro %}
+
+
+{% macro textInput(field_name, human_name) %}
+	<div class="question-wrapper">
+		<div class="input-field col s6">
+	      <input id="{{field_name}}" type="text" class="validate">
+	      <label for="{{field_name}}">{{human_name}}</label>
+	    </div>
+	</div>	
+{% endmacro %}
+
+
+
+<div class="container">
+    
+  <form id="form" action="#">
+
+
+  {% for question in questions %}
+
+ 	{% if loop.index < 24%}  
+ 			
+		{% if question.human_name == 'Consent To Participate' %}		
+			{{ radioButton(question.field_name, question.human_name) }}		
+		
+		{% else %}
+			{{textInput(question.field_name, question.human_name)}}
+
+ 	{% else %}
+
+ 		{% if question.type == 'number' %}
+ 			{{ radioButton(question.field_name, question.human_name) }}	
+
+ 		{% elif question.type == 'string' %}
+ 			{{textInput(question.field_name, question.human_name)}}
+
+ 		{% else %}
+ 			{# question.type == 'date'  #}
+ 			<input type="date" class="datepicker">	
+
+ {% endfor %}
+ 	
+
+  </form>
+
+</div>
+{% endblock %}
