@@ -4,13 +4,14 @@
     <title>Path Home</title>
     <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="/css/layout-style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://use.fontawesome.com/8f5dacf368.js"></script>
 </head>
 <body>
   <ul class="side-nav fixed">
     <li>Menu</li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Person</a></li>
-    <li class="active"><a href="/profile.html" class="subheader">Selected Person</a></li>
+    <li class="active"><a href="/profile/vispdat" class="subheader">Selected Person</a></li>
         <li><a class="subheader">Person</a></li>
             <li><a class="subheader">Person</a></li>
                 <li><a class="subheader">Person</a></li>
@@ -21,9 +22,8 @@
     {% endblock %}
   </div>
 
-    <footer class="text-center">
-        <hr>
-        <p class="muted">App running on port: <code>{{ port }}</code></p>
-    </footer>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+      <script type="text/javascript" src="/js/profile.js"></script>
 </body>
 </html>

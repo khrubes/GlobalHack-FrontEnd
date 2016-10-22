@@ -21,10 +21,35 @@ app.get('/', function(req, res) {
     });
 });
 
-// Other example
+
 app.get('/profile', function(req, res) {
     res.render('profile.html', {
         page: 'profile',
+        port: app.get('port')
+    });
+});
+
+
+app.get('/profile/vispdat', function(req, res) {
+    res.render('vispdat.html', {
+        page: 'vispdat',
+        port: app.get('port')
+    });
+});
+
+
+app.get('/profile/used-services', function(req, res) {
+    res.render('used-services.html', {
+        page: 'used-services',
+        port: app.get('port')
+    });
+});
+
+
+
+app.get('/profile/next-steps', function(req, res) {
+    res.render('next-steps.html', {
+        page: 'next-steps',
         port: app.get('port')
     });
 });

@@ -16,8 +16,5 @@
 #main-section-container {
 	padding-left: 300px;
 	width: 100%;
-}
-
-#profile-banner {
-	background-color: gray;
+	height: 100vh;
 }
